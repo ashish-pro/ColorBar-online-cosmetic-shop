@@ -2,6 +2,8 @@
 import React from 'react'
 import { Whisper } from 'next/font/google'
 import {useState} from 'react'
+import Data from '@/utils/productData'
+import ProductCard from './ProductCard'
 
 const whisper = Whisper({subsets: ["latin"],weight:["400"]})
 
@@ -27,6 +29,13 @@ function NewArrival() {
             {text}
             </li>)}
         </ul>
+
+        <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 pt-8'>
+          {
+            Data.map(item => <ProductCard key={item.id} id={item.id} img={item.img} name={item.name} price={item.price}
+                              sale={item.sale} />)
+          }
+        </div>
       </div>
     </div>
   )
