@@ -16,6 +16,7 @@ function NewArrival() {
   function handleTab(index:number ){
     setSelectedTab(index)
   };
+  
   return (
     <div className='container pt-32'>
       <div className='text-center'>
